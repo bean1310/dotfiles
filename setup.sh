@@ -21,3 +21,22 @@ if [[ -f $TMUX_CONF ]]; then
 fi
 
 ln -s "$PWD/.tmux.conf" $TMUX_CONF
+
+# Install some softwares for each environments.
+
+## set up for macOS
+if [[ "$OSTYPE" == darwin* ]]; then
+    brew install zsh-autosuggestions nvim 
+fi
+
+## set up for Debian based distributions
+if [[ -f /etc/debian_version ]]; then
+    # TODO
+fi
+
+echo "---------------------"
+echo ""
+echo "SETUP SCRIPT HAS FINISHED"
+echo ""
+echo "---------------------"
+
