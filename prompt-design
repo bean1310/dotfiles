@@ -1,0 +1,15 @@
+# 現在のプロンプトにはVCSの情報を表示
+precmd() {
+    PROMPT='╭─%K{white}%F{black} %m | %~ %f%k
+╰─ '
+    RPROMPT=''
+}
+
+update-rprompt-accpet-line() {
+    PROMPT=' > '
+    RPROMPT='%D{%y/%m/%d %H:%M:%S}'
+    zle .reset-prompt
+    zle .accept-line
+}
+
+zle -N accept-line update-rprompt-accpet-line
